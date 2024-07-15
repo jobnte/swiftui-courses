@@ -9,11 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"].shuffled()
-    @State private var correctAnswer = Int.random(in: 0...2)
     @State private var showingAlert = false
     @State private var showingScore = false
+    @State private var showingWrongAlert = false
     @State private var scoreTitle = ""
+    @State private var wrongAlertTitle = ""
+    @State private var score = 0
 
+    @State private var currentGameIndex = 0
+    @State private var games: [Int] = Array.init(repeating: Int.random(in: 0...2), count: 8)
+ 
     var body: some View {
         ZStack {
             RadialGradient(stops: [
@@ -35,7 +40,7 @@ struct ContentView: View {
                             .foregroundStyle(.secondary)
                             .font(.subheadline.weight(.heavy))
 
-                        Text(countries[correctAnswer])
+                        Text(countries[games[currentGameIndex]])
                             .font(.largeTitle.weight(.semibold))
                             .foregroundStyle(.white)
                     }
@@ -59,7 +64,7 @@ struct ContentView: View {
                 Spacer()
                 Spacer()
 
-                Text("Score: ???")
+                Text("Score: \(score)")
                     .foregroundStyle(.white)
                     .font(.title.bold())
 
@@ -68,29 +73,47 @@ struct ContentView: View {
             .padding()
         }
         .alert(scoreTitle, isPresented: $showingScore) {
-            Button("Continue", action: askQuestion)
+            Button("Reset", action: resetGame)
         } message: {
-            Text("Your score is ???")
+            Text("Your score is \(score)")
         }
+        .alert("Wrong", isPresented: $showingWrongAlert) {
+            Button("Ok", action: {})
+        } message: {
+            Text(wrongAlertTitle)
+        }
+    }
+
+    func resetGame() {
+        currentGameIndex = 0
+        score = 0
+        games = Array.init(repeating: Int.random(in: 0...2), count: 8)
+        countries.shuffle()
     }
 
     func askQuestion() {
+        currentGameIndex += 1
         countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
     }
 
     func flagTapped(_ number: Int) {
-        if number == correctAnswer {
-            scoreTitle = "Correct"
-        } else {
-            scoreTitle = "Wrong"
+        if number == games[currentGameIndex] {
+            incrementScore()
         }
 
-        showingScore = true
+        if currentGameIndex + 1 < games.count {
+            askQuestion()
+        } else {
+            showingScore = true
+        }
     }
 
-    func executeDelete() {
-        print("Now deleting…")
+    func incrementScore() {
+        score += 1
+    }
+
+    func decreaseScore() {
+        score -= 1
     }
 }
 
