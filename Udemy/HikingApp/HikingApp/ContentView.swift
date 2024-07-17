@@ -30,28 +30,6 @@ struct ContentView: View {
     }
 }
 
-// Lesson 1
-// Presenting a list of items using List {}
-// List items should conforms identifiable protocol
-// Presenting items using Image view -- also use modifiers like resizable, clipShape, aspectRatio
-// Use formatted function for format numbers
-
-// Lesson 2
-// Use of extract view
-// Pass model to sub-view -- subviews should be lightweight
-// NavigationStack -- it is like putting view in a navigationController
-// NavigationLink - perform navigation, the value needs to conform Hashable (it adds a disclosure indicator in our cells)
-// NavigationDestination - it is connected to NavigationLike because the Hashable model
-
-// Lesson 3
-// Create a detail screen and passing to it the model
-// Add NavigationStack to the preview in order to enable navigation view modifiers.
-
-
-// Lesson 4 - animations
-// Implementing onTapGesture
-// Use of withAnimation for simpler animations
-
 #Preview {
     ContentView()
 }
