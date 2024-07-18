@@ -12,6 +12,7 @@ struct LearnBindingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(AppState())
         }
     }
 }
