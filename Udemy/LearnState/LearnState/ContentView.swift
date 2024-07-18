@@ -38,17 +38,6 @@ struct ContentView: View {
     }
 }
 
-// Using @State property wrapper
-// Use of toggle and fixedSize viewModifier
-// When STATE changed the SwiftUI view gets re-evaluate
-// Use different conditions to make changes in the view
-// Use of state property for TextField
-
-// Use of Searchable view modifier -- requirement, needs a navigationStack
-// Use onChange
-
-
-
 #Preview {
     NavigationStack {
         ContentView()
