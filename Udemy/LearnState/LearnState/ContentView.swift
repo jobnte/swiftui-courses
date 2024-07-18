@@ -9,21 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var count: Int = 0
+    @State private var isOn: Bool = false
 
     var body: some View {
         VStack {
-            Text("\(count)")
-                .font(.largeTitle)
-            Button("Increment") {
-                count += 1
-            }
+            Toggle(isOn: $isOn, label: {
+                Text(isOn ? "ON" : "OFF")
+            }).fixedSize()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
+        .background(isOn ? .yellow : .black)
     }
 }
 
 // Using @State property wrapper
+// Use of toggle and fixedSize viewModifier
+// When STATE changed the SwiftUI view gets re-evaluate
+// Use different conditions to make changes in the view
+
+
 
 #Preview {
     ContentView()
