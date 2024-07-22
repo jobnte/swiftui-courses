@@ -9,9 +9,23 @@ import SwiftUI
 
 struct Card: View {
     let tapped: Bool
+    @State private var scale: CGFloat = 1
 
     var body: some View {
         VStack {
+
+            Image("orangeCat")
+                .resizable()
+                .scaleEffect(scale)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 300, height: 300)
+                .gesture(
+                    MagnificationGesture()
+                        .onChanged { value in
+                            scale = value.magnitude
+                        }
+                )
+
             Text("Card")
                 .font(.largeTitle)
                 .foregroundStyle(.white)
@@ -25,3 +39,5 @@ struct Card: View {
 #Preview {
     Card(tapped: false)
 }
+
+// Implementing MagnificationGesture and use scaleEffect
