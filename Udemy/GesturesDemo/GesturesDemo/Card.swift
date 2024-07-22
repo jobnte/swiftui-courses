@@ -39,5 +39,3 @@ struct Card: View {
 #Preview {
     Card(tapped: false)
 }
-
-// Implementing MagnificationGesture and use scaleEffect
