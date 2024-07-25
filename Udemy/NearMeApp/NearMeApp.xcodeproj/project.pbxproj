@@ -16,6 +16,7 @@
 		731A53972C52586F00B89258 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731A53962C52586F00B89258 /* LocationManager.swift */; };
 		73B007542C525D5A00EB951F /* Landmakr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B007532C525D5A00EB951F /* Landmakr.swift */; };
 		73B007562C525D6C00EB951F /* LandmarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B007552C525D6C00EB951F /* LandmarkAnnotation.swift */; };
+		73B007582C525EED00EB951F /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B007572C525EED00EB951F /* PlaceListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		731A53962C52586F00B89258 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		73B007532C525D5A00EB951F /* Landmakr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmakr.swift; sourceTree = "<group>"; };
 		73B007552C525D6C00EB951F /* LandmarkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnnotation.swift; sourceTree = "<group>"; };
+		73B007572C525EED00EB951F /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				731A53902C52579400B89258 /* MapView.swift */,
+				73B007572C525EED00EB951F /* PlaceListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				731A53952C5257C400B89258 /* Coordinator.swift in Sources */,
 				731A53842C5256B800B89258 /* ContentView.swift in Sources */,
+				73B007582C525EED00EB951F /* PlaceListView.swift in Sources */,
 				73B007562C525D6C00EB951F /* LandmarkAnnotation.swift in Sources */,
 				731A53972C52586F00B89258 /* LocationManager.swift in Sources */,
 				73B007542C525D5A00EB951F /* Landmakr.swift in Sources */,

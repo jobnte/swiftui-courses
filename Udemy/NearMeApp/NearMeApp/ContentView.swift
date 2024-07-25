@@ -9,10 +9,11 @@ import SwiftUI
 import MapKit
 
 struct ContentView: View {
-    @ObservedObject private var locationManager = LocationManager()
+    private var locationManager = LocationManager()
 
     @State private var search: String = ""
     @State private var landmarks = [Landmark]()
+    @State private var tapped: Bool = false
 
     private func getNearByLandmarks() {
 
@@ -40,6 +41,16 @@ struct ContentView: View {
 
     }
 
+    func calculateOffset() -> CGFloat {
+        if self.landmarks.count > 0 && !self.tapped {
+            return UIScreen.main.bounds.size.height - UIScreen.main.bounds.size.height / 4
+        } else if self.tapped {
+            return 100
+        } else {
+            return UIScreen.main.bounds.size.height
+        }
+    }
+
     var body: some View {
         ZStack(alignment: .top) {
             MapView(landmarks: self.landmarks)
@@ -51,6 +62,11 @@ struct ContentView: View {
             .padding()
             .offset(y: 44)
 
+            PlaceListView(landmarks: self.landmarks) {
+                self.tapped.toggle()
+            }
+            .animation(.spring)
+            .offset(y: calculateOffset())
         }
     }
 }
@@ -66,3 +82,5 @@ struct ContentView: View {
 // Add Search TextField
 // Get near by landmarks using MKLocalSearch
 // Implement Landmark annotation
+
+// Showing a list of landmarks in a bottom sheet.
