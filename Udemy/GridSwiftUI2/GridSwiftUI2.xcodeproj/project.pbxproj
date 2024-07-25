@@ -11,6 +11,7 @@
 		7343DF142C52EF14005D770C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343DF132C52EF14005D770C /* ContentView.swift */; };
 		7343DF162C52EF15005D770C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7343DF152C52EF15005D770C /* Assets.xcassets */; };
 		7343DF192C52EF15005D770C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7343DF182C52EF15005D770C /* Preview Assets.xcassets */; };
+		7343DF202C52F41A005D770C /* HelloProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343DF1F2C52F41A005D770C /* HelloProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		7343DF132C52EF14005D770C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7343DF152C52EF15005D770C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7343DF182C52EF15005D770C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7343DF1F2C52F41A005D770C /* HelloProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				7343DF132C52EF14005D770C /* ContentView.swift */,
 				7343DF152C52EF15005D770C /* Assets.xcassets */,
 				7343DF172C52EF15005D770C /* Preview Content */,
+				7343DF1F2C52F41A005D770C /* HelloProgressView.swift */,
 			);
 			path = GridSwiftUI2;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7343DF142C52EF14005D770C /* ContentView.swift in Sources */,
+				7343DF202C52F41A005D770C /* HelloProgressView.swift in Sources */,
 				7343DF122C52EF14005D770C /* GridSwiftUI2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
