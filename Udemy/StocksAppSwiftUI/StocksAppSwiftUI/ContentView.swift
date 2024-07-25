@@ -39,7 +39,21 @@ struct ContentView: View {
                     .offset(y: -300)
 
                 StockListView(stocks: filteredStocks)
-                    .offset(y: 100)
+                    .offset(y: 200)
+
+                NewsArticleView(newsArticles: self.viewModel.news, onDragBegin: { value in
+                    self.viewModel.dragOffset = value.translation
+                }, onDragEnd: { value in
+
+                    if value.translation.height < 0 {
+                        self.viewModel.dragOffset = CGSize(width: 0, height: 100)
+                    } else {
+                        self.viewModel.dragOffset = CGSize(width: 0, height: 650)
+                    }
+
+                })
+                .animation(.spring)
+                .offset(y: self.viewModel.dragOffset.height)
 
             }
             .navigationBarTitle("Stocks")
@@ -52,6 +66,10 @@ struct ContentView: View {
 // Using offset to change position of the views
 // Changing appearance using UIKit methods
 // Filtering data
+
+// Implementing news api
+// Use dragBegin / dragOffset to handle drag gestures
+// Use animation spring
 
 #Preview {
     ContentView()
