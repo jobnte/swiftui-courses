@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var color: Color = .purple
+    @State private var selectedDate = Date()
 
     var body: some View {
-        ColorPicker("Select a color", selection: $color)
+        VStack {
+            DatePicker("Select date:", selection: $selectedDate)
+        }
     }
 }
 
