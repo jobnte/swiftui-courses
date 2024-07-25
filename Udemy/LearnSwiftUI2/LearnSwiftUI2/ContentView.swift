@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var selectedDate = Date()
+    @State private var text = ""
 
     var body: some View {
         VStack {
-            DatePicker("Select date:", selection: $selectedDate)
+            TextEditor(text: $text)
         }
     }
 }
