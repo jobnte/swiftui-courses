@@ -29,3 +29,6 @@ struct ContentView: View {
 // Create authorization for OpenWeatherMap API
 // Download Image using ImageLoader custom class
 // Implement MVVM pattern
+
+// Saving Temperature Unit in UserDefaults
+// Converting units
