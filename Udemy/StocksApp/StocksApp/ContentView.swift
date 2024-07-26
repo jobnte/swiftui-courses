@@ -22,6 +22,9 @@ struct ContentView: View {
         .task {
             await viewModel.getAllStocks()
         }
+        .refreshable {
+            await viewModel.getAllStocks()
+        }
     }
 }
 
