@@ -7,14 +7,41 @@
 
 import SwiftUI
 
-struct ContentView: View {
+class Counter: ObservableObject {
+    @Published var value: Int = 0
+}
 
-    @State private var text = ""
+struct CounterView: View {
+
+    @StateObject var counter = Counter()
 
     var body: some View {
         VStack {
-            TextEditor(text: $text)
+            Text("\(counter.value)")
+            Button("Counter View Increment") {
+                counter.value += 1
+            }
+        }.padding()
+        .background(Color.green)
+    }
+}
+
+struct ContentView: View {
+
+    @State private var count: Int = 0
+
+    var body: some View {
+        VStack {
+            Text("CONTENT VIEW")
+            Text("\(count)")
+            Button("Increment ContentView Counter") {
+                count += 1
+            }
+
+            CounterView()
         }
+        .padding()
+        .background(Color.yellow)
     }
 }
 

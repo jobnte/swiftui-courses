@@ -1,23 +1,16 @@
-# SwiftUI Course - Basic Usage of Components
+# SwiftUI Course - Understanding Basics of @StateObject
 
 ## What was done:
-This part of the SwiftUI course focused on the basic implementation and usage of several SwiftUI components: `TextEditor`, `DatePicker`, and `ColorPicker`.
+This part of the SwiftUI course focused on understanding and implementing the basics of `@StateObject` to manage state in SwiftUI applications.
 
 ## How it was done:
-### Using TextEditor:
-- Implemented `TextEditor` to enable multi-line text input within the application.
-- Bound the entered text to state variables to demonstrate dynamic updates.
-
-### Using DatePicker:
-- Implemented `DatePicker` to allow users to select dates.
-- Bound the selected date to state variables for dynamic date handling.
-- Configured `DatePicker` to display different date formats and modes.
-
-### Using ColorPicker:
-- Implemented `ColorPicker` to allow users to select colors.
-- Bound the selected color to state variables to update the UI dynamically.
+### Understanding @StateObject:
+- Introduced the `@StateObject` property wrapper to manage the lifecycle of observable objects within SwiftUI views.
+- Demonstrated how to create and use a `@StateObject` to maintain consistent state management across view updates.
+- Explained the differences between `@StateObject`, `@ObservedObject`, and `@EnvironmentObject` for managing state.
 
 ## What I learned:
-- **TextEditor**
-- **DatePicker**
-- **ColorPicker**
+- **@StateObject Basics**: Gained a foundational understanding of the `@StateObject` property wrapper and its role in state management.
+- **Lifecycle Management**: Learned how `@StateObject` helps manage the lifecycle of observable objects, ensuring they are created and retained correctly within views.
+- **State Consistency**: Acquired skills in using `@StateObject` to maintain consistent state across view updates, improving the reliability and performance of SwiftUI applications.
+
