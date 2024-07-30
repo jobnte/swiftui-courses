@@ -13,6 +13,8 @@
 		73B8A03E2C5841DC0038CEAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73B8A03D2C5841DC0038CEAE /* Preview Assets.xcassets */; };
 		73B8A0452C58424C0038CEAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B8A0442C58424C0038CEAE /* User.swift */; };
 		73B8A0472C5844900038CEAE /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B8A0462C5844900038CEAE /* SecondView.swift */; };
+		73B8A0492C584CD80038CEAE /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B8A0482C584CD80038CEAE /* ExpenseItem.swift */; };
+		73B8A04B2C5853330038CEAE /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B8A04A2C5853330038CEAE /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		73B8A03D2C5841DC0038CEAE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		73B8A0442C58424C0038CEAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		73B8A0462C5844900038CEAE /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		73B8A0482C584CD80038CEAE /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
+		73B8A04A2C5853330038CEAE /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +61,12 @@
 			children = (
 				73B8A0362C5841DA0038CEAE /* iExpensesApp.swift */,
 				73B8A0382C5841DA0038CEAE /* ContentView.swift */,
+				73B8A04A2C5853330038CEAE /* AddView.swift */,
 				73B8A0442C58424C0038CEAE /* User.swift */,
 				73B8A03A2C5841DC0038CEAE /* Assets.xcassets */,
 				73B8A03C2C5841DC0038CEAE /* Preview Content */,
 				73B8A0462C5844900038CEAE /* SecondView.swift */,
+				73B8A0482C584CD80038CEAE /* ExpenseItem.swift */,
 			);
 			path = iExpenses;
 			sourceTree = "<group>";
@@ -145,6 +151,8 @@
 			files = (
 				73B8A0392C5841DA0038CEAE /* ContentView.swift in Sources */,
 				73B8A0372C5841DA0038CEAE /* iExpensesApp.swift in Sources */,
+				73B8A04B2C5853330038CEAE /* AddView.swift in Sources */,
+				73B8A0492C584CD80038CEAE /* ExpenseItem.swift in Sources */,
 				73B8A0472C5844900038CEAE /* SecondView.swift in Sources */,
 				73B8A0452C58424C0038CEAE /* User.swift in Sources */,
 			);

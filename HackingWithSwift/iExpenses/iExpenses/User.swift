@@ -7,8 +7,7 @@
 
 import Foundation
 
-@Observable
-class User {
-    var firstName = "Bilbo"
-    var lastName = "Baggins"
+struct User: Codable {
+    let firstName: String
+    let lastName: String
 }
