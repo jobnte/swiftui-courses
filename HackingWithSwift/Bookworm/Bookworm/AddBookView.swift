@@ -44,10 +44,20 @@ struct AddBookView: View {
                         modelContext.insert(newBook)
                         dismiss()
                     }
+                    .disabled(!isFormValid())
                 }
             }
             .navigationTitle("Add Book")
         }
+    }
+
+    func isFormValid() -> Bool {
+        if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
+            author.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return false
+        }
+
+        return true
     }
 }
 

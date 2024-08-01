@@ -11,6 +11,8 @@
 		730430302C45355100E0B9DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7304302F2C45355100E0B9DB /* ContentView.swift */; };
 		730430322C45355200E0B9DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 730430312C45355200E0B9DB /* Assets.xcassets */; };
 		730430352C45355200E0B9DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 730430342C45355200E0B9DB /* Preview Assets.xcassets */; };
+		734ACD402C5C0A07005EE483 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734ACD3F2C5C0A07005EE483 /* FlagImage.swift */; };
+		734ACD422C5C1099005EE483 /* LargeBlueTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734ACD412C5C1099005EE483 /* LargeBlueTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		7304302F2C45355100E0B9DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		730430312C45355200E0B9DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		730430342C45355200E0B9DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		734ACD3F2C5C0A07005EE483 /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
+		734ACD412C5C1099005EE483 /* LargeBlueTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeBlueTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +57,10 @@
 			children = (
 				7304302D2C45355100E0B9DB /* GuessTheFlagApp.swift */,
 				7304302F2C45355100E0B9DB /* ContentView.swift */,
+				734ACD3F2C5C0A07005EE483 /* FlagImage.swift */,
 				730430312C45355200E0B9DB /* Assets.xcassets */,
 				730430332C45355200E0B9DB /* Preview Content */,
+				734ACD412C5C1099005EE483 /* LargeBlueTitle.swift */,
 			);
 			path = GuessTheFlag;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				734ACD422C5C1099005EE483 /* LargeBlueTitle.swift in Sources */,
 				730430302C45355100E0B9DB /* ContentView.swift in Sources */,
+				734ACD402C5C0A07005EE483 /* FlagImage.swift in Sources */,
 				7304302E2C45355100E0B9DB /* GuessTheFlagApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

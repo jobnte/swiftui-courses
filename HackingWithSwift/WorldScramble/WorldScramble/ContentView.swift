@@ -14,10 +14,14 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    @State private var score = 0
 
     var body: some View {
         NavigationStack {
             List {
+
+                Text("Current Score: \(score)")
+                
                 Section {
                     TextField("Enter your word", text: $newWord)
                         .onSubmit(addNewWord)
@@ -30,6 +34,7 @@ struct ContentView: View {
                         Text(word)
                     }
                 }
+
             }
             .navigationTitle(rootWord)
             .toolbar {
@@ -47,25 +52,29 @@ struct ContentView: View {
     func addNewWord() {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
 
-        guard answer.count > 0 else { return }
+        guard answer.count > 3 else { return }
 
         guard isOriginal(word: answer) else {
+            score -= 1
             wordError(title: "Word used already", message: "Be more original")
             return
         }
 
         guard isPossible(word: answer) else {
+            score -= 1
             wordError(title: "Word not possible", message: "You can't spell that word from '\(rootWord)'!")
             return
         }
 
         guard isReal(word: answer) else {
+            score -= 1
             wordError(title: "Word not recognized", message: "You can't just make them up, you know!")
             return
         }
 
         withAnimation {
             usedWords.insert(answer, at: 0)
+            score += 1
         }
         newWord = ""
     }

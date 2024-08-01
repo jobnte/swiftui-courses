@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Resort: Codable, Hashable, Identifiable {
+struct Resort: Codable, Hashable, Identifiable, Comparable {
     var id: String
     var name: String
     var country: String
@@ -26,4 +26,8 @@ struct Resort: Codable, Hashable, Identifiable {
 
     static let allResorts: [Resort] = Bundle.main.decode("resorts.json")
     static let example = allResorts[0]
+
+    static func < (lhs: Resort, rhs: Resort) -> Bool {
+        return lhs.id < rhs.id
+    }
 }

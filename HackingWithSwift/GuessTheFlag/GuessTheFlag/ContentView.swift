@@ -15,6 +15,8 @@ struct ContentView: View {
     @State private var scoreTitle = ""
     @State private var wrongAlertTitle = ""
     @State private var score = 0
+    @State private var rotations: [Double] = Array(repeating: 0, count: 3)
+    @State private var opacities: [Double] = Array(repeating: 1.0, count: 3)
 
     @State private var currentGameIndex = 0
     @State private var games: [Int] = Array.init(repeating: Int.random(in: 0...2), count: 8)
@@ -47,12 +49,20 @@ struct ContentView: View {
 
                     ForEach(0..<3) { number in
                         Button {
-                            flagTapped(number)
+                            withAnimation(.easeInOut(duration: 1.0)) {
+                                opacities[number] = isCorrectAnswer(number) ? 1 : 0.25
+                                rotations[number] += 360
+                                flagTapped(number)
+                            }
                         } label: {
-                            Image(countries[number])
-                                .clipShape(.capsule)
-                                .shadow(radius: 5)
+                            FlagImage(imageString: countries[number])
+
                         }
+                        .rotation3DEffect(
+                            .degrees(rotations[number]),
+                            axis: (x: 0, y: 1, z: 0)
+                        )
+                        .opacity(opacities[number])
                     }
 
                 }
@@ -96,9 +106,16 @@ struct ContentView: View {
         countries.shuffle()
     }
 
+    func isCorrectAnswer(_ number: Int) -> Bool {
+        return number == games[currentGameIndex]
+    }
+
     func flagTapped(_ number: Int) {
-        if number == games[currentGameIndex] {
+        if isCorrectAnswer(number) {
             incrementScore()
+        } else {
+            wrongAlertTitle = "That's the flag of \(countries[number])"
+            showingWrongAlert = true
         }
 
         if currentGameIndex + 1 < games.count {

@@ -11,7 +11,9 @@ struct ContentView: View {
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
 
     @State private var favorites = Favorites()
+    @State private var allResorts = Resorts()
     @State private var searchText = ""
+    @State private var showingFilterPage = false
 
     var filteredResorts: [Resort] {
         if searchText.isEmpty {
@@ -23,7 +25,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(filteredResorts) { resort in
+            List(allResorts.resorts) { resort in
                 NavigationLink(value: resort) {
                     HStack {
                         Image(resort.country)
@@ -58,10 +60,21 @@ struct ContentView: View {
             .navigationDestination(for: Resort.self) { resort in
                 ResortView(resort: resort)
             }
+            .navigationBarItems(trailing: Button(action: {
+                self.showingFilterPage = true
+                allResorts.resetFilters()
+            }, label: {
+                Text("Sort & Filter")
+            }))
+            .sheet(isPresented: $showingFilterPage, content: {
+                SortingView()
+            })
+
             .searchable(text: $searchText, prompt: "Search for a resort")
         } detail: {
             WelcomeView()
         }
+        .environment(allResorts)
         .environment(favorites)
     }
 }
